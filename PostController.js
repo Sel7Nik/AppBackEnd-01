@@ -10,6 +10,36 @@ class PostController {
       res.status(500).json(err);
     }
   }
+
+  async getAll(req, res) {
+    try {
+      const posts = await Post.find();
+      return res.json(posts);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  }
+
+  async getOne(req, res) {
+    try {
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  }
+
+  async update(req, res) {
+    try {
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  }
+
+  async delete(req, res) {
+    try {
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  }
 }
 
 export default new PostController();

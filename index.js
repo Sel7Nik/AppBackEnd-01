@@ -13,6 +13,7 @@ app.use(express.json());
 app.use('/api', router);
 
 async function startApp(params) {
+  console.log('START App');
   try {
     await mongoose.connect(DB_URL, {
       useUnifiedTopology: true,
