@@ -9,9 +9,12 @@ const DB_URL =
   'mongodb+srv://user:user@cluster0.do71t.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 //!--- Если данные были отправлены в формате JSON
 app.use(express.json())
+//!--- Регистрация роутеров
+app.use('/api', router)
+//app.use('/user', userRouter)  //?--- пример регистрации
+//app.use('/any', anyRouter)  //?--- других роутеров
 
 //!-- post
-
 app.post('/', async (req, res) => {
   try {
     const { author, title, content, picture } = req.body
