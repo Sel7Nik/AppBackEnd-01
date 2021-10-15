@@ -1,6 +1,7 @@
 import express from 'express'
 import mongoose from 'mongoose'
-import Post from './Post.js'
+import PostController from './PostController.js'
+import router from './router.js'
 const PORT = 5000
 
 const app = express()
@@ -15,15 +16,7 @@ app.use('/api', router)
 //app.use('/any', anyRouter)  //?--- других роутеров
 
 //!-- post
-app.post('/', async (req, res) => {
-  try {
-    const { author, title, content, picture } = req.body
-    const post = await Post.create({ author, title, content, picture })
-    res.status(200).json(post)
-  } catch (err) {
-    res.status(500).json(err)
-  }
-})
+app.post('/', PostController.create)
 
 async function startApp(params) {
   try {
