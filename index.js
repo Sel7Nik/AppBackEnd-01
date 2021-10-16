@@ -1,6 +1,5 @@
 import express from 'express'
 import mongoose from 'mongoose'
-import PostController from './PostController.js'
 import router from './router.js'
 const PORT = 5000
 
@@ -12,11 +11,6 @@ const DB_URL =
 app.use(express.json())
 //!--- Регистрация роутеров
 app.use('/api', router)
-//app.use('/user', userRouter)  //?--- пример регистрации
-//app.use('/any', anyRouter)  //?--- других роутеров
-
-//!-- post
-app.post('/', PostController.create)
 
 async function startApp(params) {
   try {
