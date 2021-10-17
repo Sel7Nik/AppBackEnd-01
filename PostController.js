@@ -1,5 +1,5 @@
 import PostService from './PostService.js'
-
+import fileService from './fileService.js'
 //!--- class для обработки постов
 class PostController {
   async create(req, res) {
