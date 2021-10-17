@@ -2,7 +2,7 @@ import Post from './Post.js'
 
 //!--- class для обработки запросов
 class PostService {
-  async create(post) {
+  async create(post, picture) {
     const createdPost = await Post.create({ post })
     return createdPost
   }
