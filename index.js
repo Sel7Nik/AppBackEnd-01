@@ -1,6 +1,7 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import router from './router.js'
+import fileUpload from 'express-fileupload'
 const PORT = 5000
 
 const app = express()
@@ -9,6 +10,8 @@ const DB_URL =
   'mongodb+srv://user:user@cluster0.do71t.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 //!--- Если данные были отправлены в формате JSON
 app.use(express.json())
+//!--- Регистрация fileUpload
+app.use(fileUpload())
 //!--- Регистрация роутеров --- step 1
 app.use('/api', router)
 
