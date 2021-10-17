@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+
 //!--- схема таблицы БД
 const Post = new mongoose.Schema({
   author: { type: String, required: true },
