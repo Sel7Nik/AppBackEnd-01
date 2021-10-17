@@ -10,6 +10,9 @@ const DB_URL =
   'mongodb+srv://user:user@cluster0.do71t.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 //!--- Если данные были отправлены в формате JSON
 app.use(express.json())
+//!--- Если данные статические типа изображения
+app.use(express.static('static'))
+
 //!--- Регистрация fileUpload
 app.use(fileUpload())
 //!--- Регистрация роутеров --- step 1
